@@ -5,28 +5,31 @@
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/elkd/nodebb-plugin-stripe-subscriptions"
+    "url": "git+https://github.com/elkd/nodebb-plugin-stripe-subscription.git"
   },
   "keywords": [
     "nodebb",
     "plugin",
     "stripe",
-    "subscriptions",
+    "subscription",
     "monetization"
   ],
-  "author": {
-    "name": "Elisha Kingdom",
-    "email": "el@obrisk.com"
-  },
+  "author": "Elisha Kingdom <el@obrisk.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/elkd/nodebb-plugin-stripe-subscription/issues"
   },
-  "readmeFilename": "README.md",
   "nbbpm": {
     "compatibility": "^3.0.0"
   },
   "dependencies": {
     "stripe": "5.4.0"
+  },
+  "homepage": "https://github.com/elkd/nodebb-plugin-stripe-subscription#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
