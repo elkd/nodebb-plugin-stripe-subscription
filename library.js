@@ -14,24 +14,24 @@ plugin.init = function(params, callback) {
 
 	stripe.configure();
 
-	router.get('/admin/plugins/stripe-subscriptions', hostMiddleware.admin.buildHeader, controllers.renderAdminPage);
-	router.get('/api/admin/plugins/stripe-subscriptions', controllers.renderAdminPage);
+	router.get('/admin/plugins/stripe-subscription', hostMiddleware.admin.buildHeader, controllers.renderAdminPage);
+	router.get('/api/admin/plugins/stripe-subscription', controllers.renderAdminPage);
 
 	router.get('/subscribe', hostMiddleware.buildHeader, stripe.subscribe);
 	router.get('/api/subscribe', stripe.subscribe);
 
 	router.post('/subscribe', stripe.onSubscribe);
 
-	router.get('/stripe-subscriptions/success', stripe.onSuccess);
+	router.get('/stripe-subscription/success', stripe.onSuccess);
 
-	router.post('/stripe-subscriptions/cancel-subscription', stripe.cancelSubscription);
+	router.post('/stripe-subscription/cancel-subscription', stripe.cancelSubscription);
 
 	callback();
 };
 
 plugin.addAdminNavigation = function(header, callback) {
 	header.plugins.push({
-		route: '/plugins/stripe-subscriptions',
+		route: '/plugins/stripe-subscription',
 		icon: 'fa-stripe',
 		name: 'Stripe Subscriptions'
 	});
@@ -71,7 +71,7 @@ plugin.addSubscriptionSettings = function(data, callback) {
 		if (isSubscribed) {
 			data.customSettings.push({
 				title: 'Forum Subscription',
-				content: '<button class="btn btn-danger" id="btn-cancel-subscription">Cancel Subscription</button><form id="cancel-subscription" method="POST" action="/stripe-subscriptions/cancel-subscription"></form>'
+				content: '<button class="btn btn-danger" id="btn-cancel-subscription">Cancel Subscription</button><form id="cancel-subscription" method="POST" action="/stripe-subscription/cancel-subscription"></form>'
 			});
 		}
                 else
@@ -87,7 +87,7 @@ plugin.addSubscriptionSettings = function(data, callback) {
 };
 
 plugin.whitelistSubscriptionId = function (hookData, callback) {
-    hookData.whitelist.push('stripe-subscriptions:sid');
+    hookData.whitelist.push('stripe-subscription:sid');
     callback(null, hookData);
 };
 

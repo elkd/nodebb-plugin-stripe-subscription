@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-stripe-subscription",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Monetize your forum with paid subscription-based access to certain categories",
   "main": "library.js",
   "repository": {
