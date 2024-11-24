@@ -1,4 +1,4 @@
-<form role="form" class="stripe-subscriptions-settings">
+<form role="form" class="stripe-subscription-settings">
 	<div class="row">
 		<div class="col-sm-2 col-xs-12 settings-header">Stripe API Connection</div>
 		<div class="col-sm-10 col-xs-12">

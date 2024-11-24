@@ -6,10 +6,10 @@ define('admin/plugins/stripe-subscription', ['settings'], function(Settings) {
 	var ACP = {};
 
 	ACP.init = function() {
-		Settings.load('stripe-subscription', $('.stripe-subscriptions-settings'));
+		Settings.load('stripe-subscription', $('.stripe-subscription-settings'));
 
 		$('#save').on('click', function() {
-			Settings.save('stripe-subscription', $('.stripe-subscriptions-settings'));
+			Settings.save('stripe-subscription', $('.stripe-subscription-settings'));
 		});
 	};
 

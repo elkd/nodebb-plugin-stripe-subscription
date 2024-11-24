@@ -33,7 +33,7 @@ plugin.addAdminNavigation = function(header, callback) {
 	header.plugins.push({
 		route: '/plugins/stripe-subscription',
 		icon: 'fa-stripe',
-		name: 'Stripe Subscriptions'
+		name: 'Stripe Subscription'
 	});
 
 	callback(null, header);
